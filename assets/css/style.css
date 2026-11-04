@@ -1,0 +1,242 @@
+:root {
+  --gold: #fed142;
+  --gold-soft: #ffe08a;
+  --ink: #0e1116;
+  --ink-2: #171b22;
+  --ink-3: #20252e;
+  --paper: #f4f1ea;
+  --muted: #9aa1ad;
+  --radius: 14px;
+  --font: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: radial-gradient(1200px 800px at 15% -10%, #1c222c 0%, var(--ink) 55%),
+              linear-gradient(180deg, var(--ink) 0%, #0a0c10 100%);
+  color: var(--paper);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.bg-pattern {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(254, 209, 66, 0.035) 0, rgba(254, 209, 66, 0.035) 2px, transparent 2px, transparent 26px);
+}
+
+.bg-pattern::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(600px 400px at 85% 15%, rgba(254, 209, 66, 0.08), transparent 70%),
+              radial-gradient(500px 500px at 10% 90%, rgba(254, 209, 66, 0.05), transparent 70%);
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6vh 1.5rem 3rem;
+}
+
+.content {
+  width: 100%;
+  max-width: 760px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-wrap {
+  background: var(--ink-2);
+  border: 1px solid rgba(254, 209, 66, 0.18);
+  border-radius: var(--radius);
+  padding: 2.2rem 2.6rem;
+  margin-bottom: 1.75rem;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+}
+
+.logo {
+  display: block;
+  width: min(380px, 60vw);
+  height: auto;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(254, 209, 66, 0.35);
+  border-radius: 999px;
+  color: var(--gold-soft);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 0 rgba(254, 209, 66, 0.6);
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(254, 209, 66, 0.55); }
+  70% { box-shadow: 0 0 0 9px rgba(254, 209, 66, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(254, 209, 66, 0); }
+}
+
+.tagline {
+  margin: 0 0 1.1rem;
+  font-size: clamp(1.1rem, 2.4vw, 1.45rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--paper);
+  max-width: 620px;
+}
+
+.tagline-it,
+.tagline-en {
+  display: block;
+}
+
+.tagline-en {
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 0.85em;
+  margin-top: 0.3rem;
+}
+
+.lead {
+  margin: 0 0 2.4rem;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  max-width: 540px;
+}
+
+.lead-en {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.9rem;
+  width: 100%;
+  max-width: 680px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1rem 1.1rem;
+  background: var(--ink-3);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  text-align: left;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.contact-card:hover,
+.contact-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(254, 209, 66, 0.4);
+  background: #262c37;
+}
+
+.contact-icon {
+  flex: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(254, 209, 66, 0.12);
+  color: var(--gold);
+}
+
+.contact-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.contact-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.contact-value {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--paper);
+  overflow-wrap: anywhere;
+}
+
+.site-footer {
+  position: relative;
+  z-index: 1;
+  padding: 1.4rem 1.5rem 1.8rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.78rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.site-footer p {
+  margin: 0;
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+@media (max-width: 480px) {
+  .logo-wrap {
+    padding: 1.6rem 1.8rem;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
