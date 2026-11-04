@@ -9,8 +9,8 @@
   --paper: #f6eee2;
   --muted: #cdb9a6;
   --radius: 14px;
-  --font: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", "Liberation Serif", serif;
 }
 
 * {
@@ -178,18 +178,12 @@ body {
   background: rgba(233, 196, 134, 0.25);
 }
 
-.contact-icon {
-  flex: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.contact-label {
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--bronze);
-  opacity: 0.9;
-}
-
-.contact-icon svg {
-  width: 14px;
-  height: 14px;
 }
 
 .contact-value {
